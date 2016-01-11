@@ -13,25 +13,25 @@ All methods within those classes return a result wrapped within a `Try` instance
 ```scala
 val pastebin = new Pastebin("developer_key")
 
-pastebin.login("username", "password").map(_.upload
+pastebin.login("username", "password").flatMap(_.upload
 (
   title = "A test paste.",
   content = "object Test { val example = 25 }",
-  format = "scala",
+  format = "scala"
 
 )).foreach(it => println(s"Upload complete, link: $it"))
 ```
 
-And the same code, using pattern matching to handle any exceptions that might be thrown during the chain of operations
+And the same code, using pattern matching to handle any exceptions that might have been thrown during the chain of operations
 
 ```scala
 val pastebin = new Pastebin("developer_key")
 
-pastebin.login("username", "password").map(_.upload
+pastebin.login("username", "password").flatMap(_.upload
 (
   title = "A test paste.",
   content = "object Test { val example = 25 }",
-  format = "scala",
+  format = "scala"
 
 )) match {
   case Success(it) => println(s"Upload complete, link: $it")
@@ -45,11 +45,11 @@ Deleting a paste and printing off an indication of that in just a few lines...
 ```scala
 val pastebin = new Pastebin("your_developer_key")
 
-pastebin.login("some_username", "some_password").map(_.delete("aBcDeF")).foreach(it =>
+pastebin.login("some_username", "some_password").flatMap(_.delete("aBcDeF")).foreach(it =>
     println(s"Paste $it successfully deleted."))
 ```
 
-Examples of all anonymous and authenticated Pastebin API features can be found here.
+More examples of anonymous and authenticated Pastebin API features can be found here.
 
 
 Issues
