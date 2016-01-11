@@ -1,6 +1,6 @@
 Pastebin.com 4 Scala
 ===
-Pastebin4scala is a complete Pastebin.com API wrapper written in Scala.
+Pastebin4scala is a complete Pastebin.com API wrapper written in Scala. You'll need a developer key in order to use the Pastebin API. You can find yours [here](http://pastebin.com/api#1) afer creating a Pastebin account.
 
 <br>
 
@@ -49,9 +49,9 @@ pastebin.login("some_username", "some_password").flatMap(_.delete("aBcDeF")).for
     println(s"Paste $it successfully deleted."))
 ```
 
-More examples of anonymous and authenticated Pastebin API features can be found here.
+More examples of anonymous and authenticated Pastebin API features can be found [here](https://github.com/lare96/pastebin4scala/tree/master/examples/src/main/scala).
 
 
 Issues
 -------
- If you encounter any issues with pastebin4scala please open a new issue or a pull request with the fix.
+If you encounter any issues with pastebin4scala please open a new [issue](https://github.com/lare96/pastebin4scala/issues/new) describing the problem or a [pull request](https://github.com/lare96/pastebin4scala/compare) with a potential fix to the problem.
